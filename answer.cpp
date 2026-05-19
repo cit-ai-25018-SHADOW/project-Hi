@@ -2,8 +2,6 @@
 #include <string>
 
 using namespace std;
-
-// 1. تعريف هيكل السيارة (Struct) لجمع بيانات كل سيارة
 struct Car {
     string brand;    
     string model;   
@@ -13,7 +11,6 @@ struct Car {
 };
 
 int main() {
-    // 2. إنشاء مصفوفة (Array) تحتوي على 3 سيارات كبيانات جاهزة للعرض فوراً
     Car showroom[3];
     
     showroom[0] = {"Mercedes-Benz", "G-Class", 2025, 150000, true};
@@ -26,11 +23,10 @@ int main() {
     cout << "   German & Global Car Showroom       \n";
     cout << "======================================\n";
 
-    // 3. القائمة الرئيسية (Menu) باستخدام Loop و Switch Case
     do {
-        cout << "\n1. View All Cars (عرض جميع السيارات)\n";
-        cout << "2. View German Cars Only (السيارات الألمانية فقط)\n";
-        cout << "3. Exit (خروج)\n";
+        cout << "\n1. View All Cars\n";
+        cout << "2. View German Cars Only\n";
+        cout << "3. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
         
@@ -38,7 +34,7 @@ int main() {
 
         switch (choice) {
             case 1:
-                // خيار 1: الدوران على المصفوفة وطباعة كل السيارات
+         
                 cout << "--- All Cars in Showroom ---\n";
                 for (int i = 0; i < 3; i++) {
                     cout << showroom[i].brand << " " << showroom[i].model 
@@ -50,7 +46,6 @@ int main() {
                 break;
 
             case 2:
-                // خيار 2: استخدام شرط (If) لطباعة السيارات الألمانية فقط
                 cout << "--- 🇩🇪 German Cars Only 🇩🇪 ---\n";
                 for (int i = 0; i < 3; i++) {
                     if (showroom[i].isGerman) {
@@ -69,7 +64,7 @@ int main() {
         }
         cout << "--------------------------------------\n";
         
-    } while (choice != 3); // يستمر البرنامج بالعمل طالما لم يقرر المستخدم الخروج
+    } while (choice != 3);
 
     return 0;
 }
